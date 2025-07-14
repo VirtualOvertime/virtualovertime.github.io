@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Virtual Overtime</title>
+    <style>
+      body {
+        position: relative;
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        text-align: center;
+        background-color: #f21fa0;
+        color: #ffffff;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .offscreen-img {
+        position: absolute;
+        top: 150px;
+        left: -120px;
+        transform: scale(0.8);
+        transform-origin: top left;
+        transition: transform 0.3s ease;
+        pointer-events: none;
+      }
+
+      .offscreen-img:hover {
+        transform: scale(1);
+      }
+
+      .youtube-link {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #ce1085;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        z-index: 10;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .youtube-link:hover {
+        background: #ad066d;
+        color: #fff;
+      }
+
+      h1, p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      .lower-text {
+        margin-top: -80px;
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .lowerer-text {
+        margin-top: 150px;
+        width: 30%;
+        text-align: left;
+        font-size: 1.9rem;
+        color: white;
+      }
+
+      .youtube-video {
+        margin-top: 100px;
+        width: 100%;
+        max-width: 800px;
+        height: 450px;
+        border: none;
+      }
+
+      .about-me-header {
+        margin-top: 80px;
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+      }
+
+      .about-me-text {
+        margin-top: 20px;
+        max-width: 800px;
+        font-size: 1.4rem;
+        color: white;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .about-me-text-2 {
+        margin-top: 30px;
+        max-width: 800px;
+        font-size: 1.4rem;
+        color: white;
+        text-align: center;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+
+    <a href="https://www.youtube.com/@VirtualOvertime" class="youtube-link" target="_blank" rel="noopener noreferrer">
+      My Channel
+    </a>
+
+    <h1>Hey, I'm Caleb // Virtual Overtime, and welcome to my site!</h1>
+    <p>Just like in my content, I preach...</p>
+
+    <img src="images/FOSC-logo.png" alt="FOSC logo">
+    <img src="images/me.png" alt="Image of Caleb" class="offscreen-img">
+
+    <div class="lower-text">
+      <b>Free</b> and <b>Open Source Creativity</b>.
+    </div>
+
+    <div class="lowerer-text">
+        An <b>open source</b> project, to me, <b>fuels creativity</b> by being accessible to everyone. By having the ability to use a tool, own it, distribute it, and improve it, great things can happen, and if you look around your favorite Linux distribution, you might find that your general use applications are, in fact, free and open source. They're special because they were designed with heart. <b>That's</b> "open source".
+    </div>
+
+    <iframe class="youtube-video" src="https://www.youtube.com/embed/zCtNTLvPjvs" title="Virtual Overtime Intro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <h2 class="about-me-header">All About Me</h2>
+
+    <p class="about-me-text">
+        My real name <i>actually is</i> Caleb.
+    </p>
+    <p class="about-me-text-2">
+        I love all kinds of tech-y things.
+    </p>
+
+  </body>
+</html>
