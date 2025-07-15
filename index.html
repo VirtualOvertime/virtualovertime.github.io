@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virtual Overtime</title>
     <style>
       body {
@@ -20,6 +21,11 @@
         overflow-y: auto;
       }
 
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
       .offscreen-img {
         position: absolute;
         top: 150px;
@@ -28,42 +34,34 @@
         transform-origin: top left;
         transition: transform 0.3s ease;
         pointer-events: none;
+        z-index: 0;
       }
 
       .offscreen-img:hover {
         transform: scale(1);
       }
 
-      .youtube-link {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: #ce1085;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 0.9rem;
-        z-index: 10;
-        transition: background 0.3s, color 0.3s;
-      }
-
-      .youtube-link:hover {
-        background: #ad066d;
-        color: #fff;
-      }
-
-      h1, p {
-        margin: 0;
+      h1, p,
+      .lower-text,
+      .lowerer-text,
+      .about-me-header,
+      .about-me-text,
+      .about-me-text-2,
+      .about-me-text-3,
+      .about-me-text-4,
+      .projects-header {
+        position: relative;
+        z-index: 1;
       }
 
       h1 {
         font-size: 3.5rem;
+        margin: 0;
       }
 
       p {
         font-size: 1.5rem;
+        margin: 0;
       }
 
       .lower-text {
@@ -97,30 +95,100 @@
         text-align: center;
       }
 
-      .about-me-text {
+      .about-me-text,
+      .about-me-text-2,
+      .about-me-text-3,
+      .about-me-text-4 {
         margin-top: 20px;
         max-width: 800px;
-        font-size: 1.4rem;
+        font-size: 2rem;
         color: white;
         text-align: center;
         line-height: 1.6;
+        padding: 0 10px;
       }
 
-      .about-me-text-2 {
-        margin-top: 30px;
-        max-width: 800px;
-        font-size: 1.4rem;
+      .about-me-text-4 {
+        font-size: 2.4rem; /* Increased font size */
+      }
+
+      .projects-header {
+        margin-top: 100px;
+        font-size: 1.8rem;
         color: white;
-        text-align: center;
-        line-height: 1.6;
+      }
+
+      .project-buttons {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .project-buttons a {
+        background: #ce1085;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .project-buttons a:hover {
+        background: #ad066d;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.2rem;
+          padding: 0 10px;
+        }
+
+        .lower-text {
+          font-size: 1.4rem;
+        }
+
+        .lowerer-text {
+          width: 90%;
+          font-size: 1.3rem;
+          padding: 0 10px;
+        }
+
+        .youtube-video {
+          height: 250px;
+        }
+
+        .about-me-header {
+          font-size: 2rem;
+          padding: 0 10px;
+        }
+
+        .about-me-text,
+        .about-me-text-2,
+        .about-me-text-3 {
+          font-size: 1.2rem;
+        }
+
+        .about-me-text-4 {
+          font-size: 3.2rem;
+        }
+
+        .projects-header {
+          font-size: 1.8rem;
+        }
+
+        .project-buttons a {
+          font-size: 0.9rem;
+          padding: 8px 16px;
+        }
       }
     </style>
   </head>
   <body>
-
-    <a href="https://www.youtube.com/@VirtualOvertime" class="youtube-link" target="_blank" rel="noopener noreferrer">
-      My Channel
-    </a>
 
     <h1>Hey, I'm Caleb // Virtual Overtime, and welcome to my site!</h1>
     <p>Just like in my content, I preach...</p>
@@ -133,7 +201,7 @@
     </div>
 
     <div class="lowerer-text">
-        An <b>open source</b> project, to me, <b>fuels creativity</b> by being accessible to everyone. By having the ability to use a tool, own it, distribute it, and improve it, great things can happen, and if you look around your favorite Linux distribution, you might find that your general use applications are, in fact, free and open source. They're special because they were designed with heart. <b>That's</b> "open source".
+      An <b>open source</b> project, to me, <b>fuels creativity</b> by being accessible to everyone. By having the ability to use a tool, own it, distribute it, and improve it, great things can happen, and if you look around your favorite Linux distribution, you might find that your general use applications are, in fact, free and open source. They're special because they were designed with heart. <b>That's</b> "open source".
     </div>
 
     <iframe class="youtube-video" src="https://www.youtube.com/embed/zCtNTLvPjvs" title="Virtual Overtime Intro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -141,11 +209,30 @@
     <h2 class="about-me-header">All About Me</h2>
 
     <p class="about-me-text">
-        My real name <i>actually is</i> Caleb.
+      My real name <i>actually is</i> Caleb.
     </p>
     <p class="about-me-text-2">
-        I love all kinds of tech-y things.
+      I love all kinds of tech-y things. I use Arch (btw) on my PC, and I use it for creating my content with several free and open source tools (<i>Kdenlive, GNU Image Manipulation Program, OBS Studio, HandBrake, Audacity, VLC Media Player...</i>).
     </p>
+    <p class="about-me-text-3">
+      Don't be fooled by the typical "linux-y software side" that I have, though, because I also love digital art, mallet percussion, and, of course, gaming. (<i>I have a soft side for underwater-themed games!!!</i>)
+    </p>
+
+    <h2 class="projects-header">Here are my links...</h2>
+
+    <div class="project-buttons">
+      <a href="https://github.com/VirtualOvertime" target="_blank">GitHub</a>
+      <a href="https://sketchfab.com/VirtualOvertime" target="_blank">Sketchfab</a>
+      <a href="https://www.youtube.com/@VirtualOvertime" target="_blank">YouTube</a>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <p class="about-me-text-4">
+      <b>Thank you for checking out my site!</b>
+    </p>
+
+    <div style="height: 150px;"></div>
 
   </body>
 </html>
